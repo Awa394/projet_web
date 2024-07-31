@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation d'hôtel</title>
+    <link rel="stylesheet" href="stylereserva.css" >
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .hotel-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .hotel-option span {
+            flex-grow: 1;
+        }
+        .hotel-preview {
+            display: none;
+            position: relative;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .hotel-preview img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .hotel-preview input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .modal-content button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showConfirmation() {
+            document.getElementById('confirmationModal').style.display = 'block';
+        }
+
+        function goToHomePage() {
+            window.location.href = 'index.html';
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const hotelData = {
+                hotel_sissiman: { name: "Hôtel Sissiman", img: "Hôtel_Sissima.jpg" },
+                hotel_auberge: { name: "Hôtel l'Auberge", img: "auber1.jpg" },
+                iba_hotel: { name: "Iba Hôtel", img: "Iba_hôtel.jpg" },
+                hotel_teria: { name: "Hôtel Teria", img: "Hôtel_Teria.jpg" },
+                hotel_2_palmiers: { name: "Hôtel les 2 Palmiers", img: "Hôtel_2Palmiers.jpg" },
+                oasis_lawafossi: { name: "Oasis Lawafossi", img: "Oasis_Lawafossi.jpg" },
+                hotel_entente: { name: "Hôtel L'Entente", img: "Hôtel_Entente.jpg" },
+                saby_hotel: { name: "Saby Hôtel", img: "Saby_Hôtel.jpg" },
+                hotel_relax: { name: "Hôtel Relax", img: "Hôtel_Relax.jpg" },
+                ran_hotel: { name: "RAN Hotel", img: "RAN_Hôtel_somketa.jpg" }
+            };
+
+            const hotelSelect = document.getElementById('hotel');
+            const container = document.querySelector('.container');
+
+            hotelSelect.addEventListener('change', function() {
+                const selectedOption = hotelSelect.value;
+                const hotelPreviewContainer = document.createElement('div');
+                hotelPreviewContainer.classList.add('hotel-preview');
+                
+                const hotelImage = document.createElement('img');
+                hotelImage.src = hotelData[selectedOption].img;
+                hotelImage.alt = hotelData[selectedOption].name;
+                
+                const hotelName = document.createElement('div');
+                hotelName.textContent = hotelData[selectedOption].name;
+
+                const chooseLabel = document.createElement('label');
+                chooseLabel.textContent = "Choisir";
+                
+                const chooseCheckbox = document.createElement('input');
+                chooseCheckbox.type = "checkbox";
+                chooseCheckbox.name = "choose_hotel";
+                chooseCheckbox.value = selectedOption;
+                
+                chooseLabel.appendChild(chooseCheckbox);
+
+                hotelPreviewContainer.appendChild(hotelImage);
+                hotelPreviewContainer.appendChild(hotelName);
+                hotelPreviewContainer.appendChild(chooseLabel);
+
+                const existingPreview = container.querySelector('.hotel-preview');
+                if (existingPreview) {
+                    existingPreview.remove();
+                }
+
+                container.appendChild(hotelPreviewContainer);
+                hotelPreviewContainer.style.display = 'block';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Réservation d'hôtel</h1>
+        <form onsubmit="event.preventDefault(); showConfirmation();">
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-group">
+                <label for="nb_personnes">Nombre de personnes :</label>
+                <input type="number" id="nb_personnes" name="nb_personnes" required>
+            </div>
+            <div class="form-group">
+                <label for="checkin">Date d'arrivée :</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Date de départ :</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-group">
+                <label for="hotel">Choisissez un hôtel :</label>
+                <select id="hotel" name="hotel" required>
+                    <option value="hotel_sissiman">Hôtel Sissiman</option>
+                    <option value="hotel_auberge">Hôtel l'Auberge</option>
+                    <option value="iba_hotel">Iba Hôtel</option>
+                    <option value="hotel_teria">Hôtel Teria</option>
+                    <option value="hotel_2_palmiers">Hôtel les 2 Palmiers</option>
+                    <option value="oasis_lawafossi">Oasis Lawafossi</option>
+                    <option value="hotel_entente">Hôtel L'Entente</option>
+                    <option value="saby_hotel">Saby Hôtel</option>
+                    <option value="hotel_relax">Hôtel Relax</option>
+                    <option value="ran_hotel">RAN Hotel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="chambre">Type de chambre :</label>
+                <select id="chambre" name="chambre" required>
+                    <option value="single">Simple</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="paiement">Mode de paiement :</label>
+                <select id="paiement" name="paiement" required>
+                    <option value="orange_money">Orange Money</option>
+                    <option value="moov_money">Moov Money</option>
+                    <option value="visa">Carte Visa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Réserver</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal de confirmation -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h1>Votre réservation a été faite avec succès !</h1>
+            <button onclick="goToHomePage()">OK</button>
+        </div>
+    </div>
+</body>
+</html>

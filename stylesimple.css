@@ -1,0 +1,11 @@
+        body{
+            font-family: 'Arial', sans-serif;
+            background: #ADD8E6;
+            background-size: cover;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }

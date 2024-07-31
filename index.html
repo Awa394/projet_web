@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobo Dioulasso - Accueil</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background:#ADD8E6; 
+            background-size: cover;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            
+        }
+        .navbar a {
+            color: blue;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        .marquee {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-right: 100%;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+        }
+        .footer {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bobo Dioulasso</h1>
+    </div>
+    <div class="navbar">
+        <a href="acceuil.html">Accueil</a>
+        <a href="patrimoine.html">Patrimoine</a>
+        <a href="reservation_hôtel.html">Réservation d'hôtel</a>
+        <a href="galerie.html">Galerie</a>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee">
+            <img src="logo.jpeg" alt="Logo de Bobo Dioulasso" height="80">
+            <span><h2>Veuillez parcourir notre site web pour faire ample connaissance avec les sites touristiques de Bobo Dioulasso</h2>
+</span>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Bienvenue sur notre site</h2>
+        <p>Nous sommes heureux de vous accueillir sur notre page d'accueil.</p>
+    </div>
+    <div class="footer">
+        <p>ESI_2024.Tous droits réservés.</p>
+    </div>
+</body>
+</html>

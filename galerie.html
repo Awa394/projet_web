@@ -1,0 +1,252 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de Sites Touristiques</title>
+    <style>
+        body{
+            font-family: 'Arial', sans-serif;
+            background: url('bobo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .gallery-item {
+            width: calc(33.333% - 20px);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Galerie de Sites Touristiques</h2>
+    <a href="index.html">retour</a>
+    <div class="gallery">
+        <!-- Site Touristique 1 -->
+        <div class="gallery-item">
+            <img src="guinguette1.jpg" alt="Site 1 - Photo 1">
+            <div class="caption">Guinguette</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guinguette2.jpg" alt="Site 1 - Photo 2">
+            <div class="caption">Guinguette</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guinguette3.jpg" alt="Site 1 - Photo 3">
+            <div class="caption">Guinguette</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guinguette4.jpg" alt="Site 1 - Photo 3">
+            <div class="caption">Guinguette</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guinguette5.jpg" alt="Site 1 - Photo 3">
+            <div class="caption">Guinguette</div>
+        </div>
+        <div class="gallery-item">
+            <img src="mosquée1.jpg" alt="Site 2 - Photo 1">
+            <div class="caption">vieille mosquée de Dioulassoba</div>
+        </div>
+        <div class="gallery-item">
+            <img src="mosquée2.jpg" alt="Site 2 - Photo 2">
+            <div class="caption">vieille mosquée de Dioulassoba</div>
+        </div>
+        <div class="gallery-item">
+            <img src="mosquée3.jpg" alt="Site 2 - Photo 3">
+            <div class="caption">vieille mosquée de Dioulassoba</div>
+        </div>
+        <div class="gallery-item">
+            <img src="mosquée4.jpg" alt="Site 2 - Photo 4">
+            <div class="caption">vieille mosquée de Dioulassoba</div>
+        </div>
+        <div class="gallery-item">
+            <img src="mosquée5.jpg" alt="Site 2 - Photo 4">
+            <div class="caption">vieille mosquée de Dioulassoba</div>
+        </div>
+        <div class="gallery-item">
+            <img src="tiefo1.jpg" alt="Site 3 - Photo 1">
+            <div class="caption">Mausolée Tiéfo Amoro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="tiefo2.jpg" alt="Site 3 - Photo 2">
+            <div class="caption">Mausolée Tiéfo Amoro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="tiefo3.jpg" alt="Site 3 - Photo 3">
+            <div class="caption">Mausolée Tiéfo Amoro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="tiefo4.pg.jpg" alt="Site 3 - Photo 4">
+            <div class="caption">Mausolée Tiéfo Amoro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="tiefo5.jpg" alt="Site 1 - Photo 5">
+            <div class="caption">Mausolée Tiéfo Amoro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="kôrô1.jpg" alt="Site 4 - Photo 1">
+            <div class="caption">Village de kôrô</div>
+        </div>
+        <div class="gallery-item">
+            <img src="kôrô2.jpg" alt="Site 4 - Photo 2">
+            <div class="caption">Village de kôrô</div>
+        </div>
+        <div class="gallery-item">
+            <img src="kôrô3.jpg" alt="Site 4 - Photo 3">
+            <div class="caption">Village de kôrô</div>
+        </div>
+        <div class="gallery-item">
+            <img src="kôrô4.jpg" alt="Site 4- Photo 4">
+            <div class="caption">Village de kôrô</div>
+        </div>
+        <div class="gallery-item">
+            <img src="koumi1.jpg" alt="Site 5 - Photo 1">
+            <div class="caption">Village Architectural de Koumi</div>
+        </div>
+        <div class="gallery-item">
+            <img src="koumi2.jpg" alt="Site 5 - Photo 2">
+            <div class="caption">Village Architectural de Koumi</div>
+        </div>
+        <div class="gallery-item">
+            <img src="koumi.jpg" alt="Site 5 - Photo 3">
+            <div class="caption">Village Architectural de Koumi</div>
+        </div>
+        <div class="gallery-item">
+            <img src="dafra1.jpg" alt="Site 6 - Photo 1">
+            <div class="caption">silures sacrés de Dafra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="dafra2.jpg" alt="Site 6 - Photo 2">
+            <div class="caption">silures sacrés de Dafra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="dafra3.jpg" alt="Site 6 - Photo 3">
+            <div class="caption">silures sacrés de Dafra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="dafra4jpg.jpg" alt="Site 6 - Photo 4">
+            <div class="caption">silures sacrés de Dafra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="dafra5.jpg" alt="Site 6 - Photo 5">
+            <div class="caption">silures sacrés de Dafra</div>
+        </div>
+        <div class="gallery-item">
+            <img src="musique1.jpg" alt="Site 7- Photo 1">
+            <div class="caption">Museé de la musique d'hier et d'aujourd'hui</div>
+        </div>
+        <div class="gallery-item">
+            <img src="musique2.jpg" alt="Site 7 - Photo 2">
+            <div class="caption">Museé de la musique d'hier et d'aujourd'hui</div>
+        </div>
+        <div class="gallery-item">
+            <img src="musique3.jpg" alt="Site 7- Photo 3">
+            <div class="caption">Museé de la musique d'hier et d'aujourd'hui</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bala1.jpg" alt="Site 8 - Photo 1">
+            <div class="caption">Site Touristique 8</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bala2.jpg" alt="Site 8 - Photo 2">
+            <div class="caption">la mare aux hippopotames de Bala</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bala3.jpg" alt="Site 8 - Photo 3">
+            <div class="caption">la mare aux hippopotames de Bala</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bala4.jpg" alt="Site 8- Photo 4">
+            <div class="caption">la mare aux hippopotames de Bala</div>
+        
+        </div>
+        <div class="gallery-item">
+            <img src="guimbi1.jpg" alt="Site 9 - Photo 1">
+            <div class="caption">Mausolée de la Princesse Guimbi Ouattara</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guimbi2.jpg" alt="Site 9 - Photo 2">
+            <div class="caption">Mausolée de la Princesse Guimbi Ouattara</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guimbi3.jpg" alt="Site 9 - Photo 3">
+            <div class="caption">Mausolée de la Princesse Guimbi Ouattara</div>
+        </div>
+        <div class="gallery-item">
+            <img src="guimbi4.jpg" alt="Site 9 - Photo 4">
+            <div class="caption">Mausolée de la Princesse Guimbi Ouattara</div>
+        </div>
+        <div class="gallery-item">
+            <img src="sanou1.jpg" alt="Site 10 - Photo 1">
+            <div class="caption">Museé Sogossira Sanon</div>
+        </div>
+        <div class="gallery-item">
+            <img src="sanou2.jpg" alt="Site 10 - Photo 2">
+            <div class="caption">Museé Sogossira Sanon</div>
+        </div>
+        <div class="gallery-item">
+            <img src="sanou3.jpg" alt="Site 10 - Photo 3">
+            <div class="caption">Museé Sogossira Sanon</div>
+        </div>
+        <div class="gallery-item">
+            <img src="sanou4.jpg" alt="Site 10 - Photo 4">
+            <div class="caption">Museé Sogossira Sanon</div>
+        </div>
+        <!-- Continue with other photos and sites -->
+        <!-- ... -->
+    </div>
+</div>
+
+
+</body>
+</html>

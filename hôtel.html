@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation d'Hôtel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .hotel-list, .reservation-form, .confirmation {
+            display: none;
+        }
+        .hotel-list.active, .reservation-form.active, .confirmation.active {
+            display: block;
+        }
+        .hotel-item {
+            margin-bottom: 10px;
+        }
+        .hotel-item label {
+            margin-left: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hotel-list active">
+            <h1>Choisissez un hôtel</h1>
+            <form id="hotelForm">
+                <div class="hotel-item">
+                    <input type="radio" id="hotel1" name="hotel" value="Hôtel 1">
+                    <label for="hotel1">Hôtel 1</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel2" name="hotel" value="Hôtel 2">
+                    <label for="hotel2">Hôtel 2</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel3" name="hotel" value="Hôtel 3">
+                    <label for="hotel3">Hôtel 3</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel4" name="hotel" value="Hôtel 4">
+                    <label for="hotel4">Hôtel 4</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel5" name="hotel" value="Hôtel 5">
+                    <label for="hotel5">Hôtel 5</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel6" name="hotel" value="Hôtel 6">
+                    <label for="hotel6">Hôtel 6</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel7" name="hotel" value="Hôtel 7">
+                    <label for="hotel7">Hôtel 7</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel8" name="hotel" value="Hôtel 8">
+                    <label for="hotel8">Hôtel 8</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel9" name="hotel" value="Hôtel 9">
+                    <label for="hotel9">Hôtel 9</label>
+                </div>
+                <div class="hotel-item">
+                    <input type="radio" id="hotel10" name="hotel" value="Hôtel 10">
+                    <label for="hotel10">Hôtel 10</label>
+                </div>
+                <button type="submit">Choisir</button>
+            </form>
+        </div>
+        <div class="reservation-form">
+            <h1>Formulaire de Réservation</h1>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresse</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Date d'arrivée (JJ/MM/AAAA)</label>
+                    <input type="text" id="checkin" name="checkin" placeholder="JJ/MM/AAAA" pattern="\d{2}/\d{2}/\d{4}" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Date de départ (JJ/MM/AAAA)</label>
+                    <input type="text" id="checkout" name="checkout" placeholder="JJ/MM/AAAA" pattern="\d{2}/\d{2}/\d{4}" required>
+                </div>
+                <div class="form-group">
+                    <label for="numPeople">Nombre de personnes</label>
+                    <input type="number" id="numPeople" name="numPeople" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Type de chambre</label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="single">Chambre Simple</option>
+                        <option value="double">Chambre Double</option>
+                        <option value="suite">Suite</option>
+                        <option value="family">Chambre Familiale</option>
+                    </select>
+                </div>
+                <button type="submit">Réserver</button>
+            </form>
+        </div>
+        <div class="confirmation">
+            <h1>Votre réservation a été faite avec succès !</h1>
+            <button id="okButton">OK</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('hotelForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.querySelector('.hotel-list').classList.remove('active');
+            document.querySelector('.reservation-form').classList.add('active');
+        });
+
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.querySelector('.reservation-form').classList.remove('active');
+            document.querySelector('.confirmation').classList.add('active');
+        });
+
+        document.getElementById('okButton').addEventListener('click', function() {
+            document.querySelector('.confirmation').classList.remove('active');
+            document.querySelector('.hotel-list').classList.add('active');
+        });
+    </script>
+</body>
+</html>
